@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppContingenciaPex.Android", "AppContingenciaPex\AppContingenciaPex.Android\AppContingenciaPex.Android.csproj", "{DF503443-B47E-4D60-B79B-E0F8E4813900}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B031F6B3-081B-45C0-A7AC-DDE055BB1C93} = {B031F6B3-081B-45C0-A7AC-DDE055BB1C93}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppContingenciaPex.iOS", "AppContingenciaPex\AppContingenciaPex.iOS\AppContingenciaPex.iOS.csproj", "{B031F6B3-081B-45C0-A7AC-DDE055BB1C93}"
 EndProject
