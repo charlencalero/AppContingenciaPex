@@ -54,6 +54,9 @@
     <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="27.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>9.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -82,6 +85,8 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\logolamsac.png" />
+    <AndroidResource Include="Resources\drawable\logovinci.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -89,12 +94,19 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Assets\Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppContingenciaPex\AppContingenciaPex.csproj">
-      <Project>{37F482F5-195D-4045-977C-040FB4161602}</Project>
+      <Project>{188557C3-5997-43D7-8495-DE7BAA66B16B}</Project>
       <Name>AppContingenciaPex</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Fonts\Akrobat-Bold.otf" />
+    <AndroidAsset Include="Assets\Fonts\Akrobat-Regular.otf" />
+    <AndroidAsset Include="Assets\Fonts\Exo-Bold.otf" />
+    <AndroidAsset Include="Assets\Fonts\Exo-Regular.otf" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

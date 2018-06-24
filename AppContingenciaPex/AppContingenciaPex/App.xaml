@@ -1,8 +1,143 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppContingenciaPex.App">
 	<Application.Resources>
-    
+      <ResourceDictionary>
+
+            <Color x:Key="PageBackgroundColor">Yellow</Color>
+            <Color x:Key="EtiquetaColor">Black</Color>
+            <Color x:Key="EtiquetaFondo">White</Color>
+            <Thickness x:Key="MesaMargin">10,0,20,10</Thickness>
+
+            <Color x:Key="prodColor">Blue</Color>
+            <Color x:Key="prodFondo">White</Color>
+        
+            <Color x:Key="EtiquetasColor">Black</Color>
+       
+            <Color x:Key="BotonTextColor">White</Color>
+            <Color x:Key="BotonBackColor">#0084b4</Color>
+            <Thickness x:Key="BotonMargin">8,0,10,8</Thickness>
+
+            <Thickness x:Key="zonaMargin">5,0,5,5</Thickness>
+
+            <Color x:Key="TextoColor">Black</Color>
+            <Color x:Key="PlaceHolderColor">Silver</Color>
+
+            <Style x:Key="Texto" TargetType="Entry">
+
+                <Setter Property="WidthRequest" Value="120" />
+                <Setter Property="HeightRequest" Value="38" />
+                <Setter Property="Margin" Value="{StaticResource zonaMargin}" />
+                <Setter Property="TextColor" Value="{StaticResource TextoColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource PlaceHolderColor}" />
+                <Setter Property ="FontSize" Value="19"/>
+                 <Setter Property="Entry.FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+               <OnPlatform.iOS>Akrobat-Regular</OnPlatform.iOS>
+                <OnPlatform.Android>Fonts/Akrobat-Regular.otf#Akrobat</OnPlatform.Android>
+                </OnPlatform>
+                </Setter>
+                
+            </Style>
+            
+            <Style x:Key="Etiqueta" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="36" />
+              <!--  <Setter Property="Margin" Value="{StaticResource zonaMargin}" />-->
+              <Setter Property ="FontSize" Value="19"/>
+                
+                <Setter Property="Label.FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>Akrobat-Regular</OnPlatform.iOS>
+                <OnPlatform.Android>Fonts/Akrobat-Regular.otf#Akrobat</OnPlatform.Android>
+                </OnPlatform>
+
+            </Setter>
+            </Style>
+
+            <Style x:Key="EtiquetaGrid" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="22" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <!--  <Setter Property="Margin" Value="{StaticResource zonaMargin}" />-->
+                <Setter Property ="FontSize" Value="16"/>
+
+                <Setter Property="Label.FontFamily">
+                    <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>Akrobat-Regular</OnPlatform.iOS>
+                        <OnPlatform.Android>Fonts/Akrobat-Regular.otf#Akrobat</OnPlatform.Android>
+                    </OnPlatform>
+
+                </Setter>
+            </Style>
+
+
+            <Style x:Key="EtiquetaNegrita" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="36" />
+                   <Setter Property ="FontSize" Value="19"/>
+                <Setter Property="Label.FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>Akrobat-Bold</OnPlatform.iOS>
+                <OnPlatform.Android>Fonts/Akrobat-Bold.otf#Akrobat Bold</OnPlatform.Android>
+                </OnPlatform>
+
+            </Setter>
+            </Style>
+
+              <Style x:Key="Fecha" TargetType="DatePicker">
+
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="38" />
+              <!--  <Setter Property="Margin" Value="{StaticResource zonaMargin}" />-->
+
+                 <Setter Property="DatePicker.FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>Akrobat-Regular</OnPlatform.iOS>
+                <OnPlatform.Android>Fonts/Akrobat-Regular.otf#Akrobat</OnPlatform.Android>
+                </OnPlatform></Setter>
+                
+            </Style>
+          
+
+            <Style x:Key="Combo" TargetType="Picker">
+                <Setter Property="HeightRequest" Value="38" />
+                <Setter Property="WidthRequest" Value="120" />
+          <Setter Property="Margin" Value="{StaticResource zonaMargin}" />
+          <Setter Property ="FontSize" Value="19"/>
+                
+               <Setter Property="Picker.FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>Akrobat-Regular</OnPlatform.iOS>
+                <OnPlatform.Android>Fonts/Akrobat-Regular.otf#Akrobat</OnPlatform.Android>
+                </OnPlatform></Setter>
+            </Style>
+
+            <Style x:Key="Botones" TargetType="Button">
+                <Setter Property="HeightRequest" Value="38" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="CornerRadius" Value="19" />
+                <Setter Property ="FontSize" Value="17"/>
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="{StaticResource BotonMargin}" />
+                <Setter Property="TextColor" Value="{StaticResource BotonTextColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource BotonBackColor}" />
+
+                <Setter Property="Button.FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.iOS>Akrobat-Bold</OnPlatform.iOS>
+                <OnPlatform.Android>Fonts/Akrobat-Bold.otf#Akrobat Bold</OnPlatform.Android>
+                </OnPlatform></Setter>
+                
+            </Style>
+
+        </ResourceDictionary>
+        
 	</Application.Resources>
 </Application>

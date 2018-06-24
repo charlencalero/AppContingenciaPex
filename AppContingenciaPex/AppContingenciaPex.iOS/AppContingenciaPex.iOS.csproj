@@ -148,12 +148,27 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>9.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\AppContingenciaPex\AppContingenciaPex.csproj">
-      <Project>{37F482F5-195D-4045-977C-040FB4161602}</Project>
+      <Project>{188557C3-5997-43D7-8495-DE7BAA66B16B}</Project>
       <Name>AppContingenciaPex</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="logovinci.jpg" />
+    <BundleResource Include="logolamsac.png" />
+    <BundleResource Include="Resources\Fonts\Akrobat-Bold.otf" />
+    <BundleResource Include="Resources\Fonts\Akrobat-Regular.otf" />
+    <BundleResource Include="Resources\Fonts\Exo-Bold.otf" />
+    <BundleResource Include="Resources\Fonts\Exo-Regular.otf" />
+    <BundleResource Include="iniciovinci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Fonts\" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 using System;
+using AppContingenciaPex.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace AppContingenciaPex
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+            MainPage = new NavigationPage(new BuscarPg());
 		}
 
 		protected override void OnStart ()
