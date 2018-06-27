@@ -14,7 +14,7 @@ namespace AppContingenciaPex.Data
             string result;
             try
             {
-                using (var client = new HttpClient())
+                using (var client = new HttpClient(new NativeMessageHandler()))
                 {
                     client.BaseAddress = new Uri(Constantes.RestUrl);
 
@@ -23,9 +23,9 @@ namespace AppContingenciaPex.Data
                     result = response.Content.ReadAsStringAsync().Result;
                 }
             }
-            catch (Exception)
+            catch (Exception EX)
             {
-
+                var error = EX.Message;
                 return null;
             }
 
@@ -127,14 +127,37 @@ namespace AppContingenciaPex.Data
 
         //}
 
-        //public async Task<Respuesta> Imprimir(string CODSALON, string NROMESA)
-        //{
-        //    string url = string.Format(Constantes.CarpUrl + "/pedido_impresion?codsalon={0}&nromesa={1}", CODSALON, NROMESA);
-        //    string result = await Service(url);
+        public async Task<Cliente> ObtenerCliente(string placa)
+        {
+            string url = string.Format(Constantes.CarpUrl + "/cliente?placa={0}", placa);
+            string result = await Service(url);
+            try
+            {
+                return JsonConvert.DeserializeObject<Cliente>(result);
+            }
+            catch (Exception ex)
+            {
+                return new Cliente();
+            }
+           
+        }
 
-        //    return JsonConvert.DeserializeObject<Respuesta>(result);
+        public async Task<Contingencia> InsertaContingencia(string placa,string idmidia,string monto,string agente,string titulo)
+        {
+            string url = string.Format(Constantes.CarpUrl + "/contingencia?placa={0}&idmidia={1}&monto={2}&agente={3}&titulo={4}", placa,idmidia,monto,agente,titulo);
+            string result = await Service(url);
+            try
+            {
+                return JsonConvert.DeserializeObject<Contingencia>(result);
+            }
+            catch (Exception ex)
+            {
+                return new Contingencia();
+            }
 
-        //}
+        }
+
+
         //public async Task<Respuesta> Compuesta(List<Juntar> Compu)
         //{
         //    string url = string.Format("/api/Compuesta");

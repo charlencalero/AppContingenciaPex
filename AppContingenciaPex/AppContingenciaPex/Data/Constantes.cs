@@ -5,12 +5,11 @@ namespace AppContingenciaPex.Data
     {
         // URL of REST service
 
-        //public static string RestUrl = "http://catalogoks.azurewebsites.net";
 
-        public static string RestUrl = "http://192.168.1.75:90";
+        public static string RestUrl = "http://miportal.pex.com.pe";
 
-        public static string CarpUrl = "/Ksoft";
-        //public static string CarpUrl = "/Php_Colegio";
+        public static string CarpUrl = "/pex21/track/api";
+     
         public static string empr_codi = "1";
 
         // Credentials that are hard coded into the REST service

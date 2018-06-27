@@ -7,13 +7,14 @@ namespace AppContingenciaPex.Entity
         {
         }
 
-        public Cliente(string placa, string cliente, double saldo, string tipo, string estado)
+        public Cliente(string placa, string cliente, double saldo, string tipo, string estado,string idmidia)
         {
             this.placa = placa;
             this.cliente = cliente;
             this.saldo = saldo;
             this.tipo = tipo;
             this.estado = estado;
+            this.idmidia = idmidia;
         }
 
         public string placa { get; set; }
@@ -21,6 +22,7 @@ namespace AppContingenciaPex.Entity
         public double saldo { get; set; }
         public string tipo { get; set; }
         public string estado { get; set; }
+        public string idmidia { get; set; }
 
 
     }

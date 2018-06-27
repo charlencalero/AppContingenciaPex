@@ -11,6 +11,7 @@ namespace AppContingenciaPex.Pages
         double saldo = 0;
         Double montopeaje = 5.3;
         string agente = "MAXIMO HUAMAN";
+        string idmidia = "";
 
         public BuscarPg()
         {
@@ -25,6 +26,8 @@ namespace AppContingenciaPex.Pages
             LabeValorEstado.Text = "";
             LabeValorPlaca.Text = "";
             TextPlaca.Text = "";
+            saldo = 0;
+            idmidia = "";
         }
 
         private async void buscarcplaca (string placa)
@@ -33,8 +36,10 @@ namespace AppContingenciaPex.Pages
 
             Limpiar();
 
-            var clie = await api.clientelocal(placa.ToUpper());
+            var clie = await api.ObtenerCliente(placa.ToUpper());
+            // var clie = await api.clientelocal(placa.ToUpper());
          
+
             ButtBuscar.IsEnabled = true;
            
 
@@ -51,6 +56,7 @@ namespace AppContingenciaPex.Pages
             LabeValorSaldo.Text = "S/ " + clie.saldo.ToString();
             LabeValorEstado.Text = clie.estado;
             LabeValorPlaca.Text = clie.placa;
+            idmidia = clie.idmidia;
 
         }
 
@@ -68,7 +74,8 @@ namespace AppContingenciaPex.Pages
                 buttpase.IsEnabled = false;
 
                 // enviar al webservice
-                var conti = await api.contilocal(LabeValorPlaca.Text,montopeaje.ToString(),agente,"COBRO REGISTRADO");
+                var conti = await api.InsertaContingencia(LabeValorPlaca.Text,idmidia,montopeaje.ToString(),agente,"COBRO REGISTRADO");
+                // var conti = await api.contilocal(LabeValorPlaca.Text,  montopeaje.ToString(), agente, "COBRO REGISTRADO");
 
 
                 Limpiar();
@@ -97,7 +104,11 @@ namespace AppContingenciaPex.Pages
             {
                 buttfuga.IsEnabled = false;
                 // enviar al webservice
-                var conti = await api.contilocal(LabeValorPlaca.Text, montopeaje.ToString(), agente, "FUGA REGISTRADO");
+             
+                 var conti = await api.InsertaContingencia(LabeValorPlaca.Text,idmidia, montopeaje.ToString(), agente, "FUGA REGISTRADO");
+                // var conti = await api.contilocal(LabeValorPlaca.Text, montopeaje.ToString(), agente, "FUGA REGISTRADO");
+
+
 
                 buttfuga.IsEnabled = true;
                 Limpiar();
@@ -122,8 +133,11 @@ namespace AppContingenciaPex.Pages
             {
                 buttpromesa.IsEnabled = false;
                 // enviar al webservice
-                var conti = await api.contilocal(LabeValorPlaca.Text, montopeaje.ToString(), agente, "PROMESA REGISTRADO");
               
+                var conti = await api.InsertaContingencia(LabeValorPlaca.Text,idmidia, montopeaje.ToString(), agente, "PROMESA REGISTRADO");
+                // var conti = await api.contilocal(LabeValorPlaca.Text, montopeaje.ToString(), agente, "PROMESA REGISTRADO");
+             
+
                 buttpromesa.IsEnabled = true;
                 Limpiar();
 

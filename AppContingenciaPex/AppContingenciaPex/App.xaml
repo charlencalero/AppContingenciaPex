@@ -16,7 +16,7 @@
             <Color x:Key="EtiquetasColor">Black</Color>
        
             <Color x:Key="BotonTextColor">White</Color>
-            <Color x:Key="BotonBackColor">#0084b4</Color>
+            <Color x:Key="BotonBackColor">#004489</Color>
             <Thickness x:Key="BotonMargin">8,0,10,8</Thickness>
 
             <Thickness x:Key="zonaMargin">5,0,5,5</Thickness>
@@ -78,7 +78,7 @@
             <Style x:Key="EtiquetaNegrita" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HeightRequest" Value="36" />
+            <!--<Setter Property="HeightRequest" Value="36" />-->
                    <Setter Property ="FontSize" Value="19"/>
                 <Setter Property="Label.FontFamily">
                 <OnPlatform x:TypeArguments="x:String">
@@ -119,7 +119,7 @@
             </Style>
 
             <Style x:Key="Botones" TargetType="Button">
-                <Setter Property="HeightRequest" Value="38" />
+                <Setter Property="HeightRequest" Value="45" />
                 <Setter Property="WidthRequest" Value="100" />
                 <Setter Property="CornerRadius" Value="19" />
                 <Setter Property ="FontSize" Value="17"/>

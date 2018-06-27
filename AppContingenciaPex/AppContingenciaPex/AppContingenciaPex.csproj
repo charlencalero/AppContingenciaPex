@@ -7,9 +7,11 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Xam.Plugin.BxlMpXamarinSDK" Version="1.1.7" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Entity\" />
+    <Folder Include="Service\" />
   </ItemGroup>
 </Project>
