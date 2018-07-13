@@ -6,7 +6,7 @@ namespace AppContingenciaPex.Data
         // URL of REST service
 
 
-        public static string RestUrl = "http://miportal.pex.com.pe";
+        public static string RestUrl = "https://miportal.pex.com.pe";
 
         public static string CarpUrl = "/pex21/track/api";
      

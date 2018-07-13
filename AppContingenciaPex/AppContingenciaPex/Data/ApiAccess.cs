@@ -14,7 +14,7 @@ namespace AppContingenciaPex.Data
             string result;
             try
             {
-                using (var client = new HttpClient(new NativeMessageHandler()))
+                using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(Constantes.RestUrl);
 
@@ -130,7 +130,7 @@ namespace AppContingenciaPex.Data
         public async Task<Cliente> ObtenerCliente(string placa)
         {
             string url = string.Format(Constantes.CarpUrl + "/cliente?placa={0}", placa);
-            string result = await Service(url);
+            string result = await ServicePost(url,null);
             try
             {
                 return JsonConvert.DeserializeObject<Cliente>(result);
@@ -145,7 +145,7 @@ namespace AppContingenciaPex.Data
         public async Task<Contingencia> InsertaContingencia(string placa,string idmidia,string monto,string agente,string titulo)
         {
             string url = string.Format(Constantes.CarpUrl + "/contingencia?placa={0}&idmidia={1}&monto={2}&agente={3}&titulo={4}", placa,idmidia,monto,agente,titulo);
-            string result = await Service(url);
+            string result = await ServicePost(url,null);
             try
             {
                 return JsonConvert.DeserializeObject<Contingencia>(result);

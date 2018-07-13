@@ -105,7 +105,7 @@ namespace AppContingenciaPex.Pages
                 buttfuga.IsEnabled = false;
                 // enviar al webservice
              
-                 var conti = await api.InsertaContingencia(LabeValorPlaca.Text,idmidia, montopeaje.ToString(), agente, "FUGA REGISTRADO");
+                 var conti = await api.InsertaContingencia(LabeValorPlaca.Text,idmidia, montopeaje.ToString(), agente, "FUGA REGISTRADA");
                 // var conti = await api.contilocal(LabeValorPlaca.Text, montopeaje.ToString(), agente, "FUGA REGISTRADO");
 
 
@@ -134,7 +134,7 @@ namespace AppContingenciaPex.Pages
                 buttpromesa.IsEnabled = false;
                 // enviar al webservice
               
-                var conti = await api.InsertaContingencia(LabeValorPlaca.Text,idmidia, montopeaje.ToString(), agente, "PROMESA REGISTRADO");
+                var conti = await api.InsertaContingencia(LabeValorPlaca.Text,idmidia, montopeaje.ToString(), agente, "PROMESA REGISTRADA");
                 // var conti = await api.contilocal(LabeValorPlaca.Text, montopeaje.ToString(), agente, "PROMESA REGISTRADO");
              
 

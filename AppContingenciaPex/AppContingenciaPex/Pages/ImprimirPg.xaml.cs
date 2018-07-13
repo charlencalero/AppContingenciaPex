@@ -38,6 +38,7 @@ namespace AppContingenciaPex.Pages
 
         void buttimpr_Clicked(object sender, System.EventArgs e)
         {
+            buttimpr.IsEnabled = false;
             Imprimir();
             Navigation.PopAsync();
         }
@@ -67,13 +68,14 @@ namespace AppContingenciaPex.Pages
                 await _printer.directIO(new byte[] { 0x1b, 0x40 });
 
            
-                await _printer.printText("LAMSAC", new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER, Bold = true,Width = MPosFontSizeWidth.MPOS_FONT_SIZE_WIDTH_1  });
+                await _printer.printText("LAMSAC\n\n", new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER, Bold = true,Width = MPosFontSizeWidth.MPOS_FONT_SIZE_WIDTH_1  });
 
-                await _printer.printText(LabeValorTitulo.Text, new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER , Bold = true});
-                await _printer.printText("TARIFA " + LabeValorPeaje.Text, new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER });
-                await _printer.printText("FECHA: " + LabeValorFecha.Text, new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER });
-                await _printer.printText("PLACA" + LabeValorPlaca, new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER });
+                await _printer.printText(LabeValorTitulo.Text+"\n", new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER , Bold = true});
+                await _printer.printText("TARIFA :" + LabeValorPeaje.Text+"\n", new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER });
+                await _printer.printText("FECHA: " + LabeValorFecha.Text+"\n", new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER });
+                await _printer.printText("PLACA: " + LabeValorPlaca.Text +"\n\n", new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER });
 
+                await _printer.printText("VINCI Highways\n", new MPosFontAttribute() { Alignment = MPosAlignment.MPOS_ALIGNMENT_CENTER , Reverse=true});
 
                 // Feed to tear-off position (Manual Cutter Position)
                 await _printer.directIO(new byte[] { 0x1b, 0x4a, 0xaf });
@@ -97,7 +99,7 @@ namespace AppContingenciaPex.Pages
         {
             var connectionInfo = new MposConnectionInformation();
 
-            connectionInfo.BluetoohDeviceId = "SPP-R320";
+            connectionInfo.BluetoohDeviceId = "SPP-R310";
             connectionInfo.MacAddress = "74:F0:7D:E6:B6:38";
             connectionInfo.IntefaceType = MPosInterfaceType.MPOS_INTERFACE_BLUETOOTH;
             _connectionInfo = connectionInfo;
